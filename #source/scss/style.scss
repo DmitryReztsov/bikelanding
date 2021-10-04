@@ -1,0 +1,442 @@
+// <ШРИФТЫ>
+
+// <Подключение шрифта>
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
+// </Подключение шрифта>
+
+// <Шрифт по умолчанию>
+$font-family: "Lato";
+// </Шрифт по умолчанию>
+
+// </ШРИФТЫ>
+
+// </ПЕРЕМЕННЫЕ>
+$min-width: 320px;
+// </ПЕРЕМЕННЫЕ>
+
+// <ОБНУЛЕНИЕ>
+@import "null";
+// </ОБНУЛЕНИЕ>
+
+//<ОБОЛОЧКА>
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+}
+//</ОБОЛОЧКА>
+
+//<ОСНОВНАЯ СЕТКА>
+.container {
+	max-width: 1230px;
+	padding: 0px 15px;
+	margin: 0px auto;
+}
+//</ОСНОВНАЯ СЕТКА>
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+@import "ui";
+@import "header";
+@import "footer";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+
+//<ОСНОВНОЙ БЛОК>
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+}
+.main-screen {
+	flex: 1 0 100%;
+	position: relative;
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+.content {
+}
+
+.generation {
+	background-color: #f7f7f7;
+
+	&__content {
+		padding: 120px 0;
+	}
+
+	@media (max-width: 1023px) {
+		&__content {
+			padding: 45px 0;
+		}
+	}
+}
+
+.block {
+	text-align: center;
+
+	&__logo {
+		padding: 0px 0px 30px 0px;
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		color: #353738;
+		padding: 0px 0px 20px 0px;
+	}
+
+	&__text {
+		font-size: 18px;
+		line-height: 34px;
+		color: #848789;
+		&_small {
+			text-align: justify;
+			font-size: 16px;
+			line-height: 30px;
+			&::after {
+				content: "";
+				width: 50px;
+				height: 1px;
+				background-color: rgba(53, 55, 56, 0.2);
+				display: block;
+				margin: 35px auto 0px auto;
+			}
+		}
+	}
+
+	@media (max-width: 1439px) {
+		&__text {
+			&_small {
+				&::after {
+					margin: 20px auto 0px auto;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__title {
+			line-height: 34px;
+		}
+	}
+}
+
+// ========================
+
+.brands {
+	&_reverse {
+		.brands__column {
+			order: 1;
+			&_big {
+				order: 2;
+			}
+		}
+	}
+
+	&__row {
+		display: flex;
+	}
+
+	&__column {
+		flex: 0 1 33.333%;
+		&_big {
+			flex: 0 1 66.667%;
+		}
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		height: 100%;
+	}
+
+	&__content {
+		padding: 70px 67px;
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -10px;
+			left: calc(50% - 10px);
+			width: 0;
+			height: 0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid #fff;
+		}
+	}
+
+	&__image {
+		padding: 0px 0px 37.5% 0px;
+	}
+
+	@media (max-width: 1439px) {
+		&__content {
+			padding: 40px 34px;
+		}
+	}
+	@media (max-width: 1100px) {
+		&__row {
+			flex-direction: column;
+		}
+	}
+}
+.item {
+	&__logo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		color: #fff;
+		row-gap: 10px;
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		visibility: hidden;
+		opacity: 0;
+		background-color: rgba(100, 194, 158, 0.5);
+		transition: all 0.5s ease 0s;
+	}
+
+	@media (max-width: 1100px) {
+		&__logo img {
+			transform: scale(0.75);
+		}
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&:hover {
+		.item__logo {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+	@media (max-width: 1100px) {
+		height: auto;
+		padding: 0px 0px 70% 0px;
+	}
+}
+
+//===================================
+
+.slider {
+	background-color: #f7f7f7;
+	padding: 120px 0px 60px 0px;
+
+	&__wrapper {
+	}
+
+	&__item {
+		text-align: center;
+	}
+
+	&__logo {
+		margin: 0px 0px 35px 0px;
+	}
+
+	&__title {
+		margin: 0px 0px 25px 0px;
+		font-size: 18px;
+		line-height: 1.2;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		color: #353738;
+		span {
+			font-weight: 300;
+			color: #848789;
+		}
+	}
+
+	&__text {
+		font-size: 24px;
+		line-height: 34px;
+		font-style: italic;
+		color: #848789;
+		padding: 0px 0px 100px 0px;
+
+		@media (max-width: 767px) {
+			padding: 0px 15px 100px 15px;
+		}
+	}
+	&__pagination {
+	}
+	&__bullet {
+	}
+}
+
+//==========================================
+
+.shop {
+	&__row {
+		display: flex;
+	}
+
+	&__column {
+		flex: 0 1 16.666%;
+		&_big {
+			flex: 0 1 33.333%;
+		}
+	}
+
+	&__block {
+		min-height: 100%;
+	}
+
+	&__footer {
+		background-color: #282f35;
+		padding: 70px 0px;
+		text-align: center;
+	}
+
+	&__btn {
+		color: #fff;
+		display: inline-block;
+		border: 1px solid #fff;
+		line-height: 1.2;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		padding: 25px 60px;
+	}
+
+	@media (max-width: 1023px) {
+		&__row {
+			flex-wrap: wrap;
+		}
+
+		&__column {
+			flex: 0 1 50%;
+			&:first-child {
+				flex: 0 1 100%;
+			}
+			&:last-child {
+				flex: 0 1 100%;
+			}
+		}
+	}
+
+	@media (max-width: 374px) {
+		&__btn {
+			padding: 15px 20px;
+		}
+	}
+}
+.block-shop {
+	&__row {
+		display: flex;
+	}
+
+	&__column {
+		flex: 0 1 50%;
+	}
+
+	&__item {
+		position: relative;
+		height: auto;
+		padding: 0px 0px 50% 0px;
+		&_big {
+			padding: 0px 0px 200% 0px;
+		}
+		&_l {
+			padding: 0px 0px 100% 0px;
+		}
+	}
+}
+
+//==========================================
+
+.subscribe {
+	&__body {
+		padding: 110px 0px 110px 0px;
+		text-align: center;
+		max-width: 534px;
+		margin: 0px auto;
+	}
+
+	&__logo {
+		margin: 0px 0px 40px 0px;
+	}
+
+	&__title {
+		font-size: 24px;
+		line-height: 34px;
+		font-weight: 400;
+		font-style: italic;
+		color: #848789;
+		margin: 0px 0px 35px 0px;
+	}
+
+	&__form {
+		display: flex;
+	}
+
+	&__input {
+		flex: 1 1 auto;
+		background-color: #ffffff;
+		border: 1px solid #d3d7d9;
+		margin: 0px 8px 0px 0px;
+		.input {
+			font-size: 20px;
+			line-height: 24px;
+			font-weight: 400;
+			font-style: italic;
+			color: #929292;
+			text-align: left;
+			width: 100%;
+			height: 69px;
+			padding: 0px 0px 0px 28px;
+		}
+	}
+
+	&__button {
+		flex: 0 0 126px;
+	}
+
+	&__btn {
+		width: 100%;
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: 300;
+		color: #ffffff;
+		height: 69px;
+		background-color: #64c29e;
+	}
+
+	@media (max-width: 650px) {
+		&__body {
+			padding: 50px 0px;
+		}
+		&__form {
+			display: block;
+		}
+		&__input {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+}
+
+//</ОСНОВНОЙ БЛОК>
